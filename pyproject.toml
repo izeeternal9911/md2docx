@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "md2docx"
+version = "2.0.0"
+description = "Convert Markdown to clean, well-formatted Word (.docx) documents, with proper Chinese/CJK support."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "Yize Guo" }]
+keywords = ["markdown", "docx", "word", "converter", "chinese", "cjk"]
+dependencies = ["python-docx>=1.0"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Text Processing :: Markup :: Markdown",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+md2docx = "md2docx:main"
+
+[tool.setuptools]
+py-modules = ["md2docx"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
